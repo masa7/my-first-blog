@@ -1,0 +1,118 @@
+01:15 ~ $ pip3.7 install --user pythonanywhere
+
+Looking in links: /usr/share/pip-wheels
+Collecting pythonanywhere
+  Downloading https://files.pythonhosted.org/packages/10/4d/db93f6eaac82f84fd9252bb1b4e8e2f27ed75e495a38d38bcd30bc62aa91/pythonanywhere-0.
+7.4.tar.gz
+Requirement already satisfied: docopt in /usr/lib/python3.7/site-packages (from pythonanywhere) (0.6.2)
+Requirement already satisfied: requests in /usr/lib/python3.7/site-packages (from pythonanywhere) (2.19.1)
+Requirement already satisfied: python-dateutil in /usr/lib/python3.7/site-packages (from pythonanywhere) (2.7.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/lib/python3.7/site-packages (from requests->pythonanywhere) (2018.8.13)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /usr/lib/python3.7/site-packages (from requests->pythonanywhere) (3.0.4)
+Requirement already satisfied: urllib3<1.24,>=1.21.1 in /usr/lib/python3.7/site-packages (from requests->pythonanywhere) (1.23)
+Requirement already satisfied: idna<2.8,>=2.5 in /usr/lib/python3.7/site-packages (from requests->pythonanywhere) (2.7)
+Requirement already satisfied: six>=1.5 in /usr/lib/python3.7/site-packages (from python-dateutil->pythonanywhere) (1.11.0)
+Building wheels for collected packages: pythonanywhere
+  Running setup.py bdist_wheel for pythonanywhere ... done
+  Stored in directory: /home/masa7/.cache/pip/wheels/9b/fb/f5/172a379afa32f58c56d986ff804fc057c561bab7a75cacc2a3
+Successfully built pythonanywhere
+Installing collected packages: pythonanywhere
+Successfully installed pythonanywhere-0.7.4
+
+
+01:16 ~ $ pa_autoconfigure_django.py https://github.com/masa7/my-first-blog.git
+
+< Running API sanity checks >
+   \
+    ~<:>>>>>>>>>
+Cloning into '/home/masa7/masa7.pythonanywhere.com'...
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 17 (delta 0), reused 17 (delta 0), pack-reused 0
+Unpacking objects: 100% (17/17), done.
+Checking connectivity... done.
+< Creating virtualenv with Python3.5 >
+   \
+    ~<:>>>>>>>>>
+Running virtualenv with interpreter /usr/bin/python3.5
+Using base prefix '/usr'
+New python executable in /home/masa7/.virtualenvs/masa7.pythonanywhere.com/bin/python3.5
+Also creating executable in /home/masa7/.virtualenvs/masa7.pythonanywhere.com/bin/python
+Installing setuptools, pip, wheel...done.
+virtualenvwrapper.user_scripts creating /home/masa7/.virtualenvs/masa7.pythonanywhere.com/bin/predeactivate
+virtualenvwrapper.user_scripts creating /home/masa7/.virtualenvs/masa7.pythonanywhere.com/bin/postdeactivate
+virtualenvwrapper.user_scripts creating /home/masa7/.virtualenvs/masa7.pythonanywhere.com/bin/preactivate
+virtualenvwrapper.user_scripts creating /home/masa7/.virtualenvs/masa7.pythonanywhere.com/bin/postactivate
+virtualenvwrapper.user_scripts creating /home/masa7/.virtualenvs/masa7.pythonanywhere.com/bin/get_env_details
+< Pip installing django (this may take a couple of minutes) >
+   \
+    ~<:>>>>>>>>>
+Looking in links: /usr/share/pip-wheels
+Collecting django
+  Downloading https://files.pythonhosted.org/packages/b1/1d/2476110614367adfb079a9bc718621f9fc8351e9214e1750cae1832d4090/Django-2.2.1-py3-
+none-any.whl (7.4MB)
+     |████████████████████████████████| 7.5MB 12.1MB/s 
+Collecting sqlparse (from django)
+  Downloading https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py
+2.py3-none-any.whl
+Collecting pytz (from django)
+  Downloading https://files.pythonhosted.org/packages/3d/73/fe30c2daaaa0713420d0382b16fbb761409f532c56bdcc514bf7b6262bb6/pytz-2019.1-py2.p
+y3-none-any.whl (510kB)
+     |████████████████████████████████| 512kB 21.2MB/s 
+Installing collected packages: sqlparse, pytz, django
+Successfully installed django-2.2.1 pytz-2019.1 sqlparse-0.3.0
+< Creating web app via API >
+   \
+    ~<:>>>>>>>>>
+< Adding static files mappings for /static/ and /media/ >
+   \
+    ~<:>>>>>>>>>
+< Updating wsgi file at /var/www/masa7_pythonanywhere_com_wsgi.py >
+   \
+    ~<:>>>>>>>>>
+< Updating settings.py >
+   \
+    ~<:>>>>>>>>>
+< Running collectstatic >
+   \
+    ~<:>>>>>>>>>
+119 static files copied to '/home/masa7/masa7.pythonanywhere.com/static'.
+< Running migrate database >
+   \
+    ~<:>>>>>>>>>
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying blog.0001_initial... OK
+  Applying sessions.0001_initial... OK
+< Reloading masa7.pythonanywhere.com via API >
+   \
+    ~<:>>>>>>>>>
+< All done!  Your site is now live at https://masa7.pythonanywhere.com >
+   \
+    ~<:>>>>>>>>>
+  ___________________________________________________________________
+/                                                                     \
+| Starting Bash shell with activated virtualenv in project directory. |
+| Press Ctrl+D to exit.                                               |
+\                                                                     /
+  -------------------------------------------------------------------
+   \
+    ~<:>>>>>>>>>

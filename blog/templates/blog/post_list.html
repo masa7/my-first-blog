@@ -1,0 +1,24 @@
+<html>
+    <head> 
+        <title>masa7 blog</title> 
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Django Test Blog</a></h1>
+        </div>
+
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text | linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+        
+        <div>
+            <p>公開日: 3 May 2019</p>
+            <h2><a href="">投稿２</a></h2>
+            <p>2つ目の投稿データ</p>
+        </div>
+    </body>
+</html>
